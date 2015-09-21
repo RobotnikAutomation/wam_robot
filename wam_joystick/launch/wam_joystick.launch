@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <launch>
   <node name="wam_joystick" type="wam_joystick" pkg="wam_joystick" output="screen">
-	<!--param name="cmd_vel_topic" type="string" value="/summit_xl_controller/command"/-->
-	<remap from="/summit_xl_controller/command" to="summit_xl/summit_xl_control/cmd_vel"/> 
+	<!-- <param name="cmd_vel_topic" type="string" value="/summit_xl_controller/command"> -->
+	<!-- <remap from="/summit_xl_controller/command" to="summit_xl/summit_xl_control/cmd_vel"/> -->
+        <remap from="/summit_xl_controller/command" to="/cmd_vel"/>
         
-	<param name="standard_vel" type="double" value="2.0"/>
+	<param name="standard_vel" type="double" value="0.1"/>
 	<!-- x-linear speed and z-angular speed scaling factors -->
 	<!-- The standard speed is set to 0.1 (m/s or rad/s), the joint commands range from 0.03 to 0.1 -->
 	<param name="linear_x_scaling_factor" type="double" value="10"/>
