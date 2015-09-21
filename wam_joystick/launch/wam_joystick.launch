@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="wam_joystick" type="wam_joystick" pkg="wam_joystick" output="screen">
+	<!--param name="cmd_vel_topic" type="string" value="/summit_xl_controller/command"/-->
+	<remap from="/summit_xl_controller/command" to="summit_xl/summit_xl_control/cmd_vel"/> 
+        
+	<param name="standard_vel" type="double" value="2.0"/>
+	<!-- x-linear speed and z-angular speed scaling factors -->
+	<!-- The standard speed is set to 0.1 (m/s or rad/s), the joint commands range from 0.03 to 0.1 -->
+	<param name="linear_x_scaling_factor" type="double" value="10"/>
+        <param name="linear_y_scaling_factor" type="double" value="10"/>
+	<param name="angular_scaling_factor" type="double" value="10"/>
+
+	<!-- WAM Joint ID (starting from 0) to control the two command speeds of the Summit XL -->
+	<param name="linear_x_joint" type="int" value="3"/>
+        <param name="linear_y_joint" type="int" value="2"/>
+	<param name="angular_z_joint" type="int" value="0"/>
+  </node>
+</launch>
+

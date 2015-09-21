@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="wam_joystick" type="wam_joystick" pkg="wam_node" output="screen" />
+</launch>
+
